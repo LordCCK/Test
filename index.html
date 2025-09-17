@@ -58,12 +58,14 @@
       }
       
       .hero {
-        min-height: 250px;
-        flex: 1 1 auto;
+        min-height: 380px;
+        align-items: center;
       }
       
       .spotify-embed {
         height: 100%;
+        max-width: 100%;
+        max-height: 100%;
       }
     }
 
@@ -235,7 +237,13 @@
     /* Responsivní úpravy */
     @media (max-width:600px){
       .hero {
-        min-height: 280px;
+        min-height: 380px;
+        align-items: center;
+      }
+      
+      .spotify-embed {
+        max-width: 100%;
+        max-height: 100%;
       }
       
       .panel {
@@ -270,6 +278,15 @@
     }
 
     @media (max-width: 400px) {
+      .hero {
+        min-height: 380px;
+      }
+      
+      .spotify-embed {
+        max-width: 100%;
+        max-height: 100%;
+      }
+      
       .panel {
         padding: 20px 16px;
       }
@@ -315,6 +332,8 @@
       <iframe
         class="spotify-embed"
         src="https://open.spotify.com/embed/album/2maCYjoUZhMETb0xsqGLBc?utm_source=generator&theme=0"
+        width="640"
+        height="720"
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
         loading="eager"
         title="Spotify přehrávač - La Utopica Bohemica">
