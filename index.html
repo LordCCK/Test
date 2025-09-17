@@ -6,19 +6,12 @@
   <title>Pekař — La Utopica Bohemica</title>
   <meta name="description" content="Rychlý odkaz na album Pekař — La Utopica Bohemica ve Spotify a Apple Music.">
 
-  <!-- Open Graph pro pěkný náhled při sdílení -->
-  <meta property="og:title" content="Pekař — La Utopica Bohemica">
-  <meta property="og:description" content="Otevři album ve své oblíbené aplikaci.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="">
-  <!-- Tip: můžeš později doplnit vlastní statický obrázek alba hostovaný v repu -->
-
   <style>
     :root{
       --bg:#0b0c10; --fg:#e5e7eb; --muted:#9ca3af; --card:#111318; --border:#1f2430;
       --btn:#ffffff; --btnText:#111318; --btnBorder:#2b2f3a;
-      --accent:#4ade80; /* zelená pro highlight Spotify */
-      --accent2:#ff3b30; /* červená pro highlight iOS/Apple */
+      --accent:#4ade80; /* Spotify zelená */
+      --accent2:#ff3b30; /* Apple Music červená */
     }
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -34,11 +27,9 @@
     .hero{
       aspect-ratio:16/9; background:#0a0b0f; display:flex; align-items:center; justify-content:center; border-bottom:1px solid var(--border);
     }
-    /* Apple Music embed – hezky ukáže obal i náhled přehrávání */
     .music-embed{
-      width:100%; height:320px; border:0; display:block;
+      width:100%; height:380px; border:0; display:block;
     }
-
     .content{padding:22px 22px 26px}
     h1{margin:0 0 6px 0; font-size:28px; letter-spacing:.2px}
     .subtitle{margin:0 0 18px 0; color:var(--muted)}
@@ -52,22 +43,11 @@
     .btn:hover{transform:translateY(-1px)}
     .btn:active{transform:translateY(0)}
     .btn svg{width:20px; height:20px}
-
-    .hint{margin-top:14px; font-size:14px; color:var(--muted)}
-    .badges{margin-top:10px; display:flex; gap:8px; flex-wrap:wrap}
-    .badge{
-      font-size:12px; padding:6px 10px; border-radius:999px; border:1px solid var(--border); color:var(--fg);
-      background:#0f1217;
-    }
-
-    /* platform highlight */
     .is-ios .btn-apple{outline:2px solid var(--accent2)}
     .is-android .btn-spotify{outline:2px solid var(--accent)}
-
-    /* responzivita */
     @media (max-width:560px){
       h1{font-size:22px}
-      .music-embed{height:280px}
+      .music-embed{height:300px}
       .btn{flex:1}
     }
   </style>
@@ -75,12 +55,11 @@
 <body>
   <div class="wrap">
     <div class="hero">
-      <!-- Oficiální Apple Music embed (zobrazí obal, náhled a tlačítko) -->
-      <iframe
-        class="music-embed"
-        allow="autoplay *; encrypted-media *; clipboard-write"
-        sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
-        src="https://embed.music.apple.com/cz/album/la-utopica-bohemica/1672655146?l=cs">
+      <!-- Spotify embed -->
+      <iframe class="music-embed"
+        src="https://open.spotify.com/embed/album/2maCYjoUZhMETb0xsqGLBc?utm_source=generator"
+        width="100%" height="380" frameBorder="0" allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
       </iframe>
     </div>
 
@@ -91,33 +70,20 @@
       <div class="buttons">
         <!-- Spotify -->
         <a class="btn btn-spotify" href="https://open.spotify.com/album/2maCYjoUZhMETb0xsqGLBc" rel="noopener">
-          <!-- Spotify logo (inline SVG) -->
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5C6.21 1.5 1.5 6.21 1.5 12S6.21 22.5 12 22.5 22.5 17.79 22.5 12 17.79 1.5 12 1.5Zm5.03 15.1c-.2.33-.63.43-.96.23-2.64-1.61-5.97-1.98-9.89-1.12-.38.08-.74-.16-.82-.54a.67.67 0 0 1 .51-.81c4.27-.93 7.97-.5 10.86 1.27.33.2.44.62.3.97Zm1.35-3.02c-.25.4-.78.53-1.18.28-3.02-1.86-7.63-2.4-11.2-1.34-.45.14-.93-.11-1.06-.56a.83.83 0 0 1 .57-1.03c4.07-1.15 9.11-.55 12.5 1.56.4.24.53.77.28 1.09Zm.12-3.16c-3.62-2.14-9.62-2.33-13.06-1.34a.96.96 0 0 1-1.17-.67.96.96 0 0 1 .64-1.18c4.02-1.18 10.61-.96 14.75 1.48.48.28.64.9.36 1.38-.28.48-.9.64-1.38.33Z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 1.5C6.21 1.5 1.5 6.21 1.5 12S6.21 22.5 12 22.5 22.5 17.79 22.5 12 17.79 1.5 12 1.5Zm5.03 15.1c-.2.33-.63.43-.96.23-2.64-1.61-5.97-1.98-9.89-1.12-.38.08-.74-.16-.82-.54a.67.67 0 0 1 .51-.81c4.27-.93 7.97-.5 10.86 1.27.33.2.44.62.3.97Zm1.35-3.02c-.25.4-.78.53-1.18.28-3.02-1.86-7.63-2.4-11.2-1.34-.45.14-.93-.11-1.06-.56a.83.83 0 0 1 .57-1.03c4.07-1.15 9.11-.55 12.5 1.56.4.24.53.77.28 1.09Zm.12-3.16c-3.62-2.14-9.62-2.33-13.06-1.34a.96.96 0 0 1-1.17-.67.96.96 0 0 1 .64-1.18c4.02-1.18 10.61-.96 14.75 1.48.48.28.64.9.36 1.38-.28.48-.9.64-1.38.33Z"/></svg>
           Otevřít ve Spotify
         </a>
 
         <!-- Apple Music -->
         <a class="btn btn-apple" href="https://music.apple.com/cz/album/la-utopica-bohemica/1672655146?l=cs" rel="noopener">
-          <!-- Apple logo (inline SVG) -->
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.36 1.64c.04.35-.08.7-.31 1.02-.21.31-.56.6-.96.85-.38.24-.83.44-1.3.4-.04-.35.09-.72.31-1.03.22-.32.59-.62.98-.85.39-.25.85-.42 1.28-.39ZM19.9 17.03c-.25.57-.55 1.1-.91 1.6-.48.68-.88 1.15-1.22 1.43-.5.45-1.04.92-1.8.93-.69.02-.91-.26-1.69-.26-.79 0-1.02.27-1.7.25-.76-.01-1.34-.46-1.84-.92-.4-.36-.88-.9-1.44-1.6-.87-1.11-1.57-2.65-1.57-4.2 0-1.23.35-2.25 1.02-3.13.64-.85 1.48-1.36 2.32-1.36.72 0 1.24.28 1.62.5.36.21.66.41 1.13.41.44 0 .72-.19 1.11-.41.48-.29 1.04-.63 1.8-.63.71 0 1.46.25 2.12.75-.08.09-.64.52-.62 1.42.02 1.13.89 1.49.91 1.5-.01.03-.14.49-.42 1.02ZM12.1 5.52c.32-.38.58-.92.52-1.46-.5.02-1.11.33-1.48.73-.32.35-.6.9-.52 1.43.55.04 1.12-.3 1.48-.7Z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M16.36 1.64c.04.35-.08.7-.31 1.02-.21.31-.56.6-.96.85-.38.24-.83.44-1.3.4-.04-.35.09-.72.31-1.03.22-.32.59-.62.98-.85.39-.25.85-.42 1.28-.39ZM19.9 17.03c-.25.57-.55 1.1-.91 1.6-.48.68-.88 1.15-1.22 1.43-.5.45-1.04.92-1.8.93-.69.02-.91-.26-1.69-.26-.79 0-1.02.27-1.7.25-.76-.01-1.34-.46-1.84-.92-.4-.36-.88-.9-1.44-1.6-.87-1.11-1.57-2.65-1.57-4.2 0-1.23.35-2.25 1.02-3.13.64-.85 1.48-1.36 2.32-1.36.72 0 1.24.28 1.62.5.36.21.66.41 1.13.41.44 0 .72-.19 1.11-.41.48-.29 1.04-.63 1.8-.63.71 0 1.46.25 2.12.75-.08.09-.64.52-.62 1.42.02 1.13.89 1.49.91 1.5-.01.03-.14.49-.42 1.02ZM12.1 5.52c.32-.38.58-.92.52-1.46-.5.02-1.11.33-1.48.73-.32.35-.6.9-.52 1.43.55.04 1.12-.3 1.48-.7Z"/></svg>
           Otevřít v Apple Music
         </a>
       </div>
-
-      <div class="badges">
-        <span class="badge">NFC-ready</span>
-        <span class="badge">Bez trackerů</span>
-        <span class="badge">Rychlé načtení</span>
-      </div>
-
-      <p class="hint">
-        Tip: Na iOS se po přiložení NFC vždy zobrazí banner – otevření proběhne až po klepnutí (omezení iOS).
-      </p>
     </div>
   </div>
 
   <script>
-    // Lehká platformová indikace pro vizuální zvýraznění správného tlačítka
     (function(){
       const ua = navigator.userAgent || "";
       if (/iPhone|iPad|iPod/i.test(ua)) document.documentElement.classList.add('is-ios');
