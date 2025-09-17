@@ -20,9 +20,9 @@
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
 
-    *{box-sizing:border-box; margin:0; padding:0}
-    html,body{height:100%; margin:0; background:linear-gradient(180deg,var(--bg-1),var(--bg-2)); color:var(--text); -webkit-font-smoothing:antialiased; overflow:hidden}
-    a{color:inherit; text-decoration:none}
+    *{box-sizing:border-box !important; margin:0 !important; padding:0 !important}
+    html,body{height:100% !important; margin:0 !important; background:linear-gradient(180deg,var(--bg-1),var(--bg-2)) !important; color:var(--text) !important; -webkit-font-smoothing:antialiased !important; overflow:hidden !important}
+    a{color:inherit !important; text-decoration:none !important}
 
     .wrap{
       display:flex;
@@ -146,112 +146,112 @@
 
     /* Panel dole */
     .panel{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      padding:20px 24px;
-      background:rgba(0,0,0,0.4);
-      border-top:1px solid rgba(255,255,255,0.1);
-      backdrop-filter: blur(20px);
-      flex-shrink: 0;
+      display:flex !important;
+      align-items:center !important;
+      justify-content:space-between !important;
+      gap:16px !important;
+      padding:20px 24px !important;
+      background:rgba(0,0,0,0.4) !important;
+      border-top:1px solid rgba(255,255,255,0.1) !important;
+      backdrop-filter: blur(20px) !important;
+      flex-shrink: 0 !important;
     }
 
-    .meta{display:flex; flex-direction:column; gap:6px; min-width:0}
-    .title{font-size:17px; font-weight:700; margin:0; color:var(--text); letter-spacing: -0.02em}
-    .sub{font-size:13px; color:var(--muted); margin:0; font-weight:500}
+    .meta{display:flex !important; flex-direction:column !important; gap:6px !important; min-width:0 !important}
+    .title{font-size:17px !important; font-weight:700 !important; margin:0 !important; color:var(--text) !important; letter-spacing: -0.02em !important}
+    .sub{font-size:13px !important; color:var(--muted) !important; margin:0 !important; font-weight:500 !important}
 
-    .actions{display:flex; gap:12px}
+    .actions{display:flex !important; gap:12px !important}
 
     .btn{
-      position: relative;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:12px 18px;
-      border-radius:8px;
-      font-weight:600;
-      font-size:14px;
-      min-height:44px;
-      min-width:120px;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      border: none;
-      cursor: pointer;
-      overflow: hidden;
-      text-transform: none;
-      letter-spacing: -0.01em;
+      position: relative !important;
+      display:inline-flex !important;
+      align-items:center !important;
+      justify-content:center !important;
+      gap:10px !important;
+      padding:12px 18px !important;
+      border-radius:8px !important;
+      font-weight:600 !important;
+      font-size:14px !important;
+      min-height:44px !important;
+      min-width:120px !important;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      border: none !important;
+      cursor: pointer !important;
+      overflow: hidden !important;
+      text-transform: none !important;
+      letter-spacing: -0.01em !important;
     }
 
     .btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: inherit;
-      border-radius: inherit;
-      opacity: 0;
-      transition: opacity 0.3s ease;
+      content: '' !important;
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      background: inherit !important;
+      border-radius: inherit !important;
+      opacity: 0 !important;
+      transition: opacity 0.3s ease !important;
     }
 
     .btn:hover::before {
-      opacity: 0.1;
+      opacity: 0.1 !important;
     }
 
     .btn svg{
-      width:20px;
-      height:20px;
-      transition: transform 0.3s ease;
+      width:20px !important;
+      height:20px !important;
+      transition: transform 0.3s ease !important;
     }
 
     .btn:hover svg {
-      transform: scale(1.1);
+      transform: scale(1.1) !important;
     }
 
     .btn-spotify{
-      background: linear-gradient(135deg, #1db954 0%, #1ed760 100%);
-      color: #000;
+      background: linear-gradient(135deg, #1db954 0%, #1ed760 100%) !important;
+      color: #000 !important;
       box-shadow: 
         0 8px 32px rgba(29,185,84,0.3),
         0 4px 16px rgba(29,185,84,0.2),
-        inset 0 1px 0 rgba(255,255,255,0.2);
-      font-weight: 700;
+        inset 0 1px 0 rgba(255,255,255,0.2) !important;
+      font-weight: 700 !important;
     }
 
     .btn-spotify:hover{
-      transform: translateY(-2px) scale(1.02);
+      transform: translateY(-2px) scale(1.02) !important;
       box-shadow: 
         0 12px 40px rgba(29,185,84,0.4),
         0 6px 20px rgba(29,185,84,0.3),
-        inset 0 1px 0 rgba(255,255,255,0.3);
+        inset 0 1px 0 rgba(255,255,255,0.3) !important;
     }
 
     .btn-spotify:active {
-      transform: translateY(-1px) scale(1.01);
+      transform: translateY(-1px) scale(1.01) !important;
     }
 
     .btn-apple{
-      background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 30%, #ff6b9d 70%, #c44569 100%);
-      color: #fff;
+      background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 30%, #ff6b9d 70%, #c44569 100%) !important;
+      color: #fff !important;
       box-shadow: 
         0 8px 32px rgba(255,107,107,0.3),
         0 4px 16px rgba(255,107,107,0.2),
-        inset 0 1px 0 rgba(255,255,255,0.2);
-      font-weight: 700;
+        inset 0 1px 0 rgba(255,255,255,0.2) !important;
+      font-weight: 700 !important;
     }
 
     .btn-apple:hover{
-      transform: translateY(-2px) scale(1.02);
+      transform: translateY(-2px) scale(1.02) !important;
       box-shadow: 
         0 12px 40px rgba(255,107,107,0.4),
         0 6px 20px rgba(255,107,107,0.3),
-        inset 0 1px 0 rgba(255,255,255,0.3);
+        inset 0 1px 0 rgba(255,255,255,0.3) !important;
     }
 
     .btn-apple:active {
-      transform: translateY(-1px) scale(1.01);
+      transform: translateY(-1px) scale(1.01) !important;
     }
 
     /* Glassmorphism efekt pro alternativní styl */
@@ -338,13 +338,14 @@
       }
       
       .panel {
-        padding: 20px 16px;
+        padding: 20px 16px !important;
+        background:rgba(0,0,0,0.4) !important;
       }
       
       .btn {
-        padding: 12px 16px;
-        min-height: 44px;
-        font-size: 13px;
+        padding: 12px 16px !important;
+        min-height: 44px !important;
+        font-size: 13px !important;
       }
 
       .modal-content {
@@ -420,13 +421,13 @@
   </div>
 
   <script>
-    // Zobrazí modal na 3 sekundy a pak ho automaticky zavře
+    // Zobrazí modal na 4 sekundy a pak ho automaticky zavře
     function closeBannerModal() {
       const modal = document.getElementById('bannerModal');
       modal.classList.add('hidden');
     }
 
-    // Automatické zavření po 3 sekundách
+    // Automatické zavření po 4 sekundách
     window.addEventListener('load', function() {
       setTimeout(function() {
         closeBannerModal();
