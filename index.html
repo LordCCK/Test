@@ -57,8 +57,13 @@
         border-radius: 0;
       }
       
+      .hero {
+        min-height: 250px;
+        flex: 1 1 auto;
+      }
+      
       .spotify-embed {
-        min-height: 150px;
+        height: 100%;
       }
     }
 
@@ -109,6 +114,7 @@
       background:rgba(0,0,0,0.4);
       border-top:1px solid rgba(255,255,255,0.1);
       backdrop-filter: blur(20px);
+      flex-shrink: 0;
     }
 
     .meta{display:flex; flex-direction:column; gap:6px; min-width:0}
@@ -228,12 +234,17 @@
 
     /* Responsivní úpravy */
     @media (max-width:600px){
+      .hero {
+        min-height: 280px;
+      }
+      
       .panel {
         flex-direction: column;
         gap: 16px;
         align-items: stretch;
         text-align: center;
         padding: 24px 20px;
+        flex-shrink: 0;
       }
       
       .meta {
