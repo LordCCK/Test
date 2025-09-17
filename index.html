@@ -33,8 +33,23 @@
       box-shadow:var(--shadow);
     }
 
+    /* Banner nahoře */
+    .banner{
+      flex-shrink:0;
+      display:block;
+      width:100%;
+      background:#000;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+    .banner img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+
+    /* Přehrávač */
     .hero{
-      flex:1; /* zabere všechen zbývající prostor */
+      flex:1;
       display:flex;
       align-items:center;
       justify-content:center;
@@ -46,6 +61,7 @@
       border:0;
     }
 
+    /* Panel dole */
     .panel{
       display:flex;
       align-items:center;
@@ -96,6 +112,11 @@
 </head>
 <body>
   <div class="wrap">
+    <!-- Klikací banner s odkazem na předprodej -->
+    <a class="banner" href="https://www.smsticket.cz/vstupenky/51108-pekar-palac-akropolis-praha" target="_blank" rel="noopener">
+      <img src="palac.png" alt="Pekař — Palác Akropolis Praha, vstupenky v předprodeji">
+    </a>
+
     <div class="hero">
       <iframe
         class="spotify-embed"
