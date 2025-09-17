@@ -49,16 +49,8 @@
         height: 100dvh;
       }
       
-      .banner {
-        border-radius: 0;
-      }
-      
-      .banner img {
-        border-radius: 0;
-      }
-      
       .hero {
-        min-height: 380px;
+        min-height: 450px;
         align-items: center;
       }
       
@@ -69,27 +61,97 @@
         width: auto;
         height: 100%;
       }
+
+      .modal-content {
+        max-width: 95vw;
+        max-height: 70vh;
+      }
     }
 
-    /* Banner nahoře */
-    .banner{
-      flex-shrink:0;
-      display:block;
-      width:100%;
-      background:#000;
+    /* Modal styles */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 1;
+      visibility: visible;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .modal-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .modal-content {
+      position: relative;
+      max-width: 90vw;
+      max-height: 80vh;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+      transform: scale(1);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.5),
+        0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .modal-overlay.hidden .modal-content {
+      transform: scale(0.9);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 40px;
+      height: 40px;
+      background: rgba(0, 0, 0, 0.7);
+      border: none;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 24px;
+      font-weight: 300;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1001;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .modal-close:hover {
+      background: rgba(0, 0, 0, 0.9);
+      transform: scale(1.1);
+    }
+
+    .modal-content img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+    }
+
+    .modal-content a {
+      display: block;
       transition: transform 0.3s ease;
-      border-radius:12px;
-      overflow:hidden;
-      margin:0;
     }
-    .banner:hover {
-      transform: scale(1.002);
-    }
-    .banner img{
-      width:100%;
-      height:auto;
-      display:block;
-      border-radius:12px;
+
+    .modal-content a:hover {
+      transform: scale(1.02);
     }
 
     /* Přehrávač */
@@ -239,7 +301,7 @@
     /* Responsivní úpravy */
     @media (max-width:600px){
       .hero {
-        min-height: 380px;
+        min-height: 420px;
         align-items: center;
       }
       
@@ -259,6 +321,12 @@
         padding: 24px 20px;
         flex-shrink: 0;
       }
+      
+      .modal-content {
+        max-width: 90vw;
+        max-height: 60vh;
+      }
+    }
       
       .meta {
         text-align: center;
@@ -304,6 +372,11 @@
         min-height: 44px;
         font-size: 13px;
       }
+
+      .modal-content {
+        max-width: 95vw;
+        max-height: 50vh;
+      }
     }
 
     /* Přidání jemného svítění pro tlačítka */
@@ -330,12 +403,17 @@
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <!-- Klikací banner s odkazem na předprodej -->
-    <a class="banner" href="https://www.smsticket.cz/vstupenky/51108-pekar-palac-akropolis-praha" target="_blank" rel="noopener">
-      <img src="palac.png" alt="Pekař — Palác Akropolis Praha, vstupenky v předprodeji">
-    </a>
+  <!-- Modal popup pro banner -->
+  <div class="modal-overlay" id="bannerModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeBannerModal()">×</button>
+      <a href="https://www.smsticket.cz/vstupenky/51108-pekar-palac-akropolis-praha" target="_blank" rel="noopener">
+        <img src="palac.png" alt="Pekař — Palác Akropolis Praha, vstupenky v předprodeji">
+      </a>
+    </div>
+  </div>
 
+  <div class="wrap">
     <div class="hero">
       <iframe
         class="spotify-embed"
@@ -367,5 +445,34 @@
       </div>
     </div>
   </div>
+
+  <script>
+    // Zobrazí modal na 4 sekundy a pak ho automaticky zavře
+    function closeBannerModal() {
+      const modal = document.getElementById('bannerModal');
+      modal.classList.add('hidden');
+    }
+
+    // Automatické zavření po 4 sekundách
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        closeBannerModal();
+      }, 4000);
+    });
+
+    // Zavření na kliknutí mimo modal
+    document.getElementById('bannerModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeBannerModal();
+      }
+    });
+
+    // Zavření na ESC
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeBannerModal();
+      }
+    });
+  </script>
 </body>
 </html>
