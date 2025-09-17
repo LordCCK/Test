@@ -112,32 +112,6 @@
       transform: scale(0.9);
     }
 
-    .modal-close {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      width: 40px;
-      height: 40px;
-      background: rgba(0, 0, 0, 0.7);
-      border: none;
-      border-radius: 50%;
-      color: #fff;
-      font-size: 24px;
-      font-weight: 300;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1001;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(10px);
-    }
-
-    .modal-close:hover {
-      background: rgba(0, 0, 0, 0.9);
-      transform: scale(1.1);
-    }
-
     .modal-content img {
       width: 100%;
       height: auto;
@@ -406,7 +380,6 @@
   <!-- Modal popup pro banner -->
   <div class="modal-overlay" id="bannerModal">
     <div class="modal-content">
-      <button class="modal-close" onclick="closeBannerModal()">×</button>
       <a href="https://www.smsticket.cz/vstupenky/51108-pekar-palac-akropolis-praha" target="_blank" rel="noopener">
         <img src="palac.png" alt="Pekař — Palác Akropolis Praha, vstupenky v předprodeji">
       </a>
@@ -447,17 +420,17 @@
   </div>
 
   <script>
-    // Zobrazí modal na 4 sekundy a pak ho automaticky zavře
+    // Zobrazí modal na 3 sekundy a pak ho automaticky zavře
     function closeBannerModal() {
       const modal = document.getElementById('bannerModal');
       modal.classList.add('hidden');
     }
 
-    // Automatické zavření po 4 sekundách
+    // Automatické zavření po 3 sekundách
     window.addEventListener('load', function() {
       setTimeout(function() {
         closeBannerModal();
-      }, 4000);
+      }, 3000);
     });
 
     // Zavření na kliknutí mimo modal
