@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Album – La Utopica Bohemica</title>
+  <meta name="description" content="Rychlý odkaz na album kapely ve Spotify nebo Apple Music.">
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;margin:0;padding:2rem;line-height:1.5}
+    .card{max-width:640px;margin:0 auto;border:1px solid #e5e7eb;border-radius:14px;padding:1.25rem}
+    h1{margin:0 0 .5rem 0;font-size:1.4rem}
+    p{margin:.25rem 0 .75rem 0;color:#374151}
+    a.btn{display:inline-block;margin:.25rem .25rem .25rem 0;padding:.65rem 1rem;border:1px solid #d1d5db;border-radius:10px;text-decoration:none}
+  </style>
+  <script>
+    // tvoje odkazy
+    const appleUrl = "https://music.apple.com/cz/album/la-utopica-bohemica/1672655146?l=cs";
+    const spotifyUrl = "https://open.spotify.com/search/La%20Utopica%20Bohemica"; // pokud máš přesný album link na Spotify, dej ho sem
+
+    function isIOS() {
+      const ua = navigator.userAgent;
+      return /iPhone|iPad|iPod/.test(ua);
+    }
+    function isAndroid() {
+      return /Android/i.test(navigator.userAgent);
+    }
+
+    // bezpečné přesměrování po onload (aby šla vykreslit i fallback stránka)
+    window.addEventListener("load", () => {
+      try {
+        if (isIOS()) {
+          window.location.replace(appleUrl);
+        } else if (isAndroid()) {
+          window.location.replace(spotifyUrl);
+        }
+      } catch (e) {
+        // necháme zobrazit fallback níže
+      }
+    });
+  </script>
+</head>
+<body>
+  <div class="card">
+    <h1>La Utopica Bohemica</h1>
+    <p>Vyber platformu, pokud se přesměrování nespustilo samo.</p>
+    <p>
+      <a class="btn" href="https://open.spotify.com/search/La%20Utopica%20Bohemica">Otevřít ve Spotify</a>
+      <a class="btn" href="https://music.apple.com/cz/album/la-utopica-bohemica/1672655146?l=cs">Otevřít v Apple Music</a>
+    </p>
+  </div>
+  <noscript>
+    <p>Zapni JavaScript pro automatické přesměrování.</p>
+  </noscript>
+</body>
+</html>
